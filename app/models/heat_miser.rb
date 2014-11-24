@@ -26,7 +26,7 @@ class HeatMiser
           end
 
           if line.match(/<b>Heat Status.*font size='4'>(O[NF]{1,2})/)
-            result[:heating] = ($1 == 'ON') ? 1 : 0;
+            result[:heating] = ($1 == 'ON') ? true : false;
           end
 
           if line.match(/<b>Set.*font size='4'>(\d{1,2})/)
@@ -34,6 +34,8 @@ class HeatMiser
           end
         end
       end
+
+      $stderr.puts "Heatmiser data... current_temperature: #{result[:current_temperature]}, set_temperature: #{result[:set_temperature]}, heating_status: #{result[:heating]}"
 
       result
     end
