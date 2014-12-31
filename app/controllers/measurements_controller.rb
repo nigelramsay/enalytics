@@ -6,6 +6,6 @@ class MeasurementsController < ApplicationController
   private
 
   def period
-    params[:period] && params[:period].seconds || 14.days
+    params[:period] && params[:period].to_i.seconds || 14.days
   end
 end
