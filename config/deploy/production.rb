@@ -12,7 +12,7 @@
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server 'bone.ramsay.org.nz', user: ENV['USER'], roles: %w{web app}
+server 'bone.ramsay.org.nz', user: ENV['USER'], roles: %w{web app db}
 
 
 # Custom SSH Options
