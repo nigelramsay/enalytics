@@ -7,7 +7,7 @@ gem 'pg'
 
 gem 'spring', :group => :development
 
-
+gem 'capistrano', '~> 3.3.0'
 
 
 # To use ActiveModel has_secure_password
