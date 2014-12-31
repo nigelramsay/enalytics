@@ -9,7 +9,7 @@ gem 'spring', :group => :development
 
 gem 'capistrano', '~> 3.3.0'
 
-gem 'whenever'
+gem 'whenever', :require => false
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
