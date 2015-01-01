@@ -4,7 +4,8 @@ gem 'rails', '4.1.8'
 gem 'rails-api'
 gem 'pg'
 
-gem 'capistrano-rails'
+gem 'capistrano',  '~> 3.1'
+gem 'capistrano-rails', '~> 1.1'
 gem 'rvm1-capistrano3', require: false
 gem 'whenever', :require => false
 
