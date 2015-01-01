@@ -8,6 +8,6 @@ development:
 production:
   adapter: postgresql
   encoding: unicode
-  database: enalytics
+  database: heat
   pool: 5
   min_messages: warning
