@@ -5,7 +5,7 @@
 
 # Example:
 #
-# set :output, "/path/to/my/cron_log.log"
+set :output, File.join(path, 'log', 'cron.log')
 
 every 1.minute do
   rake "measurements:heatmiser:save"
