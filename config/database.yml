@@ -4,3 +4,10 @@ development:
   database: enalytics_development
   pool: 5
   min_messages: warning
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: enalytics
+  pool: 5
+  min_messages: warning
