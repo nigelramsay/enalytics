@@ -6,6 +6,7 @@ gem 'pg'
 
 gem 'capistrano',  '~> 3.1'
 gem 'capistrano-rails', '~> 1.1'
+gem 'capistrano-bundler'
 gem 'rvm1-capistrano3', require: false
 gem 'whenever', :require => false
 
