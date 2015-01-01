@@ -4,11 +4,11 @@ gem 'rails', '4.1.8'
 gem 'rails-api'
 gem 'pg'
 
-gem 'spring', :group => :development
-
-gem 'capistrano', '~> 3.3.0'
-
+gem 'capistrano-rails'
+gem 'rvm1-capistrano3', require: false
 gem 'whenever', :require => false
+
+gem 'spring', :group => :development
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
