@@ -40,7 +40,13 @@ GEM
     capistrano-rails (1.1.2)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
+    capistrano-sidekiq (0.4.0)
+      capistrano
+      sidekiq
     capistrano-stats (1.1.1)
+    capistrano3-puma (0.8.3)
+      capistrano (~> 3.0)
+      puma (>= 2.6)
     celluloid (0.16.0)
       timers (~> 4.0.0)
     chronic (0.10.2)
@@ -65,6 +71,8 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
     pg (0.17.1)
+    puma (2.10.2)
+      rack (>= 1.1, < 2.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -135,9 +143,12 @@ DEPENDENCIES
   capistrano (~> 3.1)
   capistrano-bundler
   capistrano-rails (~> 1.1)
+  capistrano-sidekiq
+  capistrano3-puma
   foreman
   pg
-  rails (= 4.1.8)
+  puma
+  rails (~> 4.1.8)
   rails-api
   rvm1-capistrano3
   sidekiq

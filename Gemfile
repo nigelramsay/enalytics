@@ -1,18 +1,23 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.8'
+gem 'rails', '~> 4.1.8'
 gem 'rails-api'
 gem 'pg'
 gem 'sidekiq'
 gem 'sidetiq'
-
-gem 'capistrano',  '~> 3.1'
-gem 'capistrano-rails', '~> 1.1'
-gem 'capistrano-bundler'
-gem 'rvm1-capistrano3', require: false
 gem 'whenever', :require => false
 
-gem 'spring', :group => :development
+gem 'puma'
+
+group :development do
+  gem 'capistrano',  '~> 3.1', require: false
+  gem 'capistrano-rails', '~> 1.1', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'rvm1-capistrano3', require: false
+  gem 'spring', require: false
+  gem 'capistrano-sidekiq', require: false
+  gem 'capistrano3-puma', require: false
+end
 
 group :foreman do
   gem 'foreman'
