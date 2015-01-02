@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
-  get 'measurements/:action', controller: 'measurements'
+  root to: redirect('measurements/energy_usage')
 
+  scope 'measurements', controller: 'measurements' do
+    get 'energy_usage'
+  end
 end
