@@ -12,14 +12,30 @@ class QueryMeasurement
   attr_reader :period_in_seconds
 
   def energy_usage_query
-    [ENERGY_USAGE_QUERY, [Time.current, Time.current - period_in_seconds]]
+    [ENERGY_USAGE_QUERY, [start_date, start_date.to_date, end_date.to_date]]
+  end
+
+  def end_date
+    @_end_date ||= Time.current
+  end
+
+  def start_date
+    @_start_date ||= end_date - period_in_seconds
   end
 
   ENERGY_USAGE_QUERY =
-    "SELECT (EXTRACT(EPOCH FROM ($1 - recorded_at))/(60*60*24))::integer as day_num, sum(value) from measurements
+    "SELECT DATE_TRUNC('day', recorded_at) as recorded_date, sum(value) as minutes_on
+     FROM measurements
      WHERE code = 'on'
      AND value = 1
-     AND recorded_at >= $2
-     GROUP BY day_num
-     ORDER BY day_num"
+     AND recorded_at >= $1
+     GROUP BY recorded_date
+
+     UNION
+
+     SELECT recorded_date, 0 as minutes_on
+     FROM generate_series($2::timestamp,
+                          $3::timestamp, '1 day') as recorded_date
+
+     ORDER BY recorded_date"
 end
