@@ -5,11 +5,11 @@
 
 # Example:
 #
-set :output, File.join(path, 'log', 'cron.log')
+# set :output, File.join(path, 'log', 'cron.log')
 
-every 1.minute do
-  rake "measurements:heatmiser:save"
-end
+# every 1.minute do
+#   rake "measurements:heatmiser:save"
+# end
 
 # every 4.days do
 #   runner "AnotherModel.prune_old_records"
