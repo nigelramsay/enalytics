@@ -9,5 +9,5 @@ production:
   adapter: postgresql
   encoding: unicode
   database: heat
-  pool: 5
+  pool: 10
   min_messages: warning

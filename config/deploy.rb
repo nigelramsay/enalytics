@@ -35,6 +35,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/ca
 # set :keep_releases, 5
 
 set :sidekiq_concurrency, 5
+set :sidekiq_timeout, 60
 
 set :puma_threads, [1, 10]
 set :puma_init_active_record, true
