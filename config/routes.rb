@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   end
 
   require 'sidekiq/web'
+  require 'sidetiq/web'
   mount Sidekiq::Web => '/admin/sidekiq'
 end
