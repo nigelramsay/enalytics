@@ -3,7 +3,7 @@ class KaroriTemperatureWorker
   include Sidetiq::Schedulable
 
   recurrence do
-    minutely(10)
+    hourly.minute_of_hour(0, 15, 30, 45)
   end
 
   def perform
