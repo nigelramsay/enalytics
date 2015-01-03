@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   scope 'measurements', controller: 'measurements' do
     get 'energy_usage'
   end
+
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/admin/sidekiq'
 end

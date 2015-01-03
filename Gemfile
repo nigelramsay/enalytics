@@ -7,6 +7,7 @@ gem 'sidekiq'
 gem 'sidetiq'
 gem 'whenever', :require => false
 gem 'nokogiri'
+gem 'sinatra'
 
 gem 'puma'
 
