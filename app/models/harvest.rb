@@ -11,6 +11,18 @@ class Harvest
     BigDecimal(temperature_content[0..-3], 1)
   end
 
+  def wind_speed
+    wind_speed_content.match(/[\d\.]+/).to_s
+  end
+
+  def wind_direction
+    wind_speed_content.match(/Wind\s([NESW]+)\s.*/)[1]
+  end
+
+  def wind_gust
+    wind_gust_content.match(/Gust\s([\d\.]+)km\/h/)[1]
+  end
+
   private
 
   def title
@@ -19,6 +31,14 @@ class Harvest
 
   def temperature_content
     document.css('#temp').first.content.strip
+  end
+
+  def wind_speed_content
+    document.css('#windspd').first.content.strip
+  end
+
+  def wind_gust_content
+    document.css('#windgust').first.content.strip
   end
 
   def document

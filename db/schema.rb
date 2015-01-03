@@ -11,20 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150103223623) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "measurements", force: true do |t|
-    t.decimal  "value",                   null: false
-    t.string   "code",        limit: nil, null: false
-    t.datetime "recorded_at",             null: false
+  create_table "measurements", force: :cascade do |t|
+    t.decimal  "value",       null: false
+    t.string   "code",        null: false
+    t.datetime "recorded_at", null: false
   end
 
-  create_table "migrations", force: true do |t|
-    t.string   "name",   null: false
-    t.datetime "run_on", null: false
+  create_table "migrations", force: :cascade do |t|
+    t.string   "name",   limit: 255, null: false
+    t.datetime "run_on",             null: false
+  end
+
+  create_table "wind_measurements", force: :cascade do |t|
+    t.decimal  "speed",       null: false
+    t.string   "direction"
+    t.decimal  "gust_speed",  null: false
+    t.datetime "recorded_at", null: false
+    t.string   "code",        null: false
   end
 
 end
