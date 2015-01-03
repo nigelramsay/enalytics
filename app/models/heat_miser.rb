@@ -35,7 +35,7 @@ class HeatMiser
         end
       end
 
-      $stderr.puts "Heatmiser data... current_temperature: #{result[:current_temperature]}, set_temperature: #{result[:set_temperature]}, heating_status: #{result[:heating]}"
+      $stderr.puts "HeatMiser data... current_temperature: #{result[:current_temperature]}, set_temperature: #{result[:set_temperature]}, heating_status: #{result[:heating]}"
 
       result
     end
