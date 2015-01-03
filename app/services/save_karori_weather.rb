@@ -25,7 +25,8 @@ class SaveKaroriWeather
 
   def save_current_temperature
     if latest_measurement.nil? || recorded_at > latest_measurement.recorded_at
-      Measurement.create! value: current_temperature, code: 'karori_temp', recorded_at: recorded_at
+      measurement = Measurement.create! value: current_temperature, code: 'karori_temp', recorded_at: recorded_at
+      $stderr.puts "Karori data... current_temperature #{measurement.value} recorded_at #{measurement.recorded_at}"
     else
       $stderr.puts "No new Karori records"
     end
