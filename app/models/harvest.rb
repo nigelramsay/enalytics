@@ -4,7 +4,7 @@ class Harvest
   end
 
   def recorded_at
-    title && DateTime.strptime(title, 'Weather at %H:%M %a %e %b %Y')
+    title && Time.strptime(title, 'Weather at %H:%M %a %e %b %Y')
   end
 
   def temperature
