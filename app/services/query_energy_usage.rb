@@ -1,4 +1,4 @@
-class QueryMeasurement
+class QueryEnergyUsage
   def initialize(period_in_seconds:)
     @period_in_seconds = period_in_seconds
   end
