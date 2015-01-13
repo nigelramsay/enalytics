@@ -3,6 +3,10 @@ class MeasurementsController < ApplicationController
     render(json: QueryEnergyUsage.new(period_in_seconds: period_in_seconds).energy_usage)
   end
 
+  def index
+  	
+  end
+
   private
 
   def period_in_seconds

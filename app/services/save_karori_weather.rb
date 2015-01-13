@@ -25,7 +25,7 @@ class SaveKaroriWeather
   end
 
   def latest_temperature_measurement
-    Measurement.where(code: 'karori_temp').order('recorded_at desc').first
+    Measurement.karori_temperatures.order('recorded_at desc').first
   end
 
   def latest_wind_measurement
@@ -46,8 +46,7 @@ class SaveKaroriWeather
   end
 
   def save_temperature_conditions
-    measurement = Measurement.find_or_initialize_by code: 'karori_temp', recorded_at: station_data_updated_at
-
+    measurement = Measurement.karori_temperatures.find_or_initialize_by recorded_at: station_data_updated_at
     measurement.value = harvest.temperature
 
     measurement.save!

@@ -12,7 +12,7 @@ class SaveHeatmiserValues
 
   def save_current_temperature
     if temp = heatmiser.current_temperature
-      Measurement.create! value: temp, code: 'actual', recorded_at: current_time_without_seconds
+      Measurement.putnam_current_temperatures.create! value: temp, recorded_at: current_time_without_seconds
     else
       $stderr.puts "Unable to acquire current_temperature"
     end
@@ -20,7 +20,7 @@ class SaveHeatmiserValues
 
   def save_set_temperature
     if temp = heatmiser.set_temperature
-      Measurement.create! value: temp, code: 'set', recorded_at: current_time_without_seconds
+      Measurement.putnam_set_temperatures.create! value: temp, recorded_at: current_time_without_seconds
     else
       $stderr.puts "Unable to acquire set_temperature"
     end
@@ -30,7 +30,7 @@ class SaveHeatmiserValues
     heating_status = heatmiser.heating?
 
     if heating_status != nil
-      Measurement.create! value: heating_status ? '1' : '0', code: 'on', recorded_at: current_time_without_seconds
+      Measurement.putnam_heating_status.create! value: heating_status ? '1' : '0', recorded_at: current_time_without_seconds
     else
       $stderr.puts "Unable to acquire heating_status"
     end
