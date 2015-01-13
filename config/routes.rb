@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   scope 'measurements', controller: 'measurements' do
     get 'energy_usage'
+    get 'putnam_current_temperatures'
+    get 'putnam_set_temperatures'
+    get 'karori_temperatures'
   end
 
   require 'sidekiq/web'
