@@ -29,7 +29,7 @@ class SaveKaroriWeather
   end
 
   def latest_wind_measurement
-    WindMeasurement.karori..order('recorded_at desc').first
+    WindMeasurement.karori.order('recorded_at desc').first
   end
 
   def save_wind_conditions
