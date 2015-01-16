@@ -3,9 +3,11 @@ class SaveHeatmiserValues
 	end
 
   def save
-    save_current_temperature
-    save_set_temperature
-    save_heating_status
+    ActiveRecord::Base.transaction do
+      save_current_temperature
+      save_set_temperature
+      save_heating_status
+    end
   end
 
   private

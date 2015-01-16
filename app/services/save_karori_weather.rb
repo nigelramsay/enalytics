@@ -4,8 +4,10 @@ class SaveKaroriWeather
   end
 
   def save
-    save_temperature_conditions if updated_temperature_data?
-    save_wind_conditions if updated_wind_data?
+    ActiveRecord::Base.transaction do
+      save_temperature_conditions if updated_temperature_data?
+      save_wind_conditions if updated_wind_data?
+    end
   end
 
   def updated_wind_data?
