@@ -15,6 +15,10 @@ class MeasurementsController < ApplicationController
   	render json: QueryMeasurements.new(period_in_seconds: period_in_seconds).karori_temperatures
   end
 
+  def karori_wind
+    render json: QueryWindMeasurements.new(period_in_seconds: period_in_seconds).karori
+  end
+
   private
 
   def period_in_seconds

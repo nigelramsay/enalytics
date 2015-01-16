@@ -29,12 +29,11 @@ class SaveKaroriWeather
   end
 
   def latest_wind_measurement
-    WindMeasurement.where(code: 'karori').order('recorded_at desc').first
+    WindMeasurement.karori..order('recorded_at desc').first
   end
 
   def save_wind_conditions
-    wind = WindMeasurement.find_or_initialize_by code: 'karori',
-                                                 recorded_at: harvest.recorded_at
+    wind = WindMeasurement.karori.find_or_initialize_by(recorded_at: harvest.recorded_at)
 
     wind.speed = harvest.wind_speed
     wind.gust_speed = harvest.wind_gust

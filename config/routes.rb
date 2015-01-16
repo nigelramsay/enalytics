@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get 'putnam_current_temperatures'
     get 'putnam_set_temperatures'
     get 'karori_temperatures'
+    get 'karori_wind'
   end
 
   require 'sidekiq/web'
