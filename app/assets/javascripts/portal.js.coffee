@@ -5,6 +5,7 @@ class Enalytics.Portal
   measurements: [
     ["/measurements/putnam_current_temperatures.json", "putnam_temperature"],
     ["/measurements/putnam_set_temperatures.json", "putnam_set_temperature"],
+    ["/measurements/putnam_heating_status.json", "putnam_heating_status"],
     ["/measurements/karori_temperatures.json", "karori_temperature"]
   ]
 

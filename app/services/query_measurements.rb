@@ -27,6 +27,14 @@ class QueryMeasurements
                 map {|t| [t[0], t[1].to_f] }
   end
 
+  def putnam_heating_status
+    Measurement.putnam_heating_status.
+                where('recorded_at >= ?', start_date).
+                order('recorded_at desc').
+                pluck(:recorded_at, :value).
+                map {|t| [t[0], t[1].to_f] }
+  end
+
   private
 
   attr_reader :period_in_seconds

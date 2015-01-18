@@ -11,6 +11,10 @@ class Api::MeasurementsController < Api::BaseController
   	render json: QueryMeasurements.new(period_in_seconds: period_in_seconds).putnam_set_temperatures
   end
 
+  def putnam_heating_status
+    render json: QueryMeasurements.new(period_in_seconds: period_in_seconds).putnam_heating_status
+  end
+    
   def karori_temperatures
   	render json: QueryMeasurements.new(period_in_seconds: period_in_seconds).karori_temperatures
   end
