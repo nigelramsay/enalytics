@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enalytics</title>
+</head>
+<body>
+  <%= yield %>
+
+  <%= javascript_include_tag 'application' %>
+  <% if content_for?(:javascript) %>
+    <script>
+      <%= yield :javascript %>
+    </script>
+  <% end %>
+</body>
+</html>

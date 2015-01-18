@@ -1,4 +1,4 @@
-class MeasurementsController < ApplicationController
+class Api::MeasurementsController < Api::BaseController
   def energy_usage
     render json: QueryEnergyUsage.new(period_in_seconds: period_in_seconds).energy_usage
   end

@@ -1,0 +1,30 @@
+<h1>Portal</h1>
+
+<h2>Putnam Street</h2>
+
+<div>Temperature</div>
+<div id="putnam_temperature"></div>
+
+<div>Set Temperature</div>
+<div id="putnam_set_temperature"></div>
+
+<div>Heating Status</div>
+<div id="putnam_heating_status"></div>
+
+<h2>Karori</h2>
+
+<div>Temperature</div>
+<div id="karori_temperature">Temperature</div>
+
+<div>Wind Speed</div>
+<div id="karori_wind_speed"></div>
+
+<div>Wind Gust</div>
+<div id="karori_wind_gust"></div>
+
+<div>Wind Direction</div>
+<div id="karori_wind_direction"></div>
+
+<% content_for :javascript do %>
+  var portal = new Enalytics.Portal();
+<% end %>

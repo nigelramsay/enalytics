@@ -25,6 +25,14 @@ group :foreman do
   gem 'foreman'
 end
 
+group :assets do
+  # gem 'sass-rails', '~> 4.0.0'
+  # gem 'bootstrap-sass', '~> 2.3.2.2'
+  gem 'coffee-rails', '~> 4.0.0'
+  gem 'uglifier', '>= 1.3.0'
+  # gem 'therubyracer'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
