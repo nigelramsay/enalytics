@@ -4,7 +4,7 @@ class QueryEnergyUsage
   end
 
   def energy_usage
-    ActiveRecord::Base.connection.raw_connection.exec_params(*energy_usage_query).values
+    ActiveRecord::Base.connection.raw_connection.exec_params(*energy_usage_query).values.map {|t| [t[0].to_date, t[1].to_i] }
   end
 
   private
@@ -41,5 +41,5 @@ class QueryEnergyUsage
      )
      SELECT DISTINCT ON (recorded_date) recorded_date, minutes_on
      FROM DAILY_ENERGY_USAGE
-     ORDER BY recorded_date, qnum"
+     ORDER BY recorded_date desc, qnum"
 end
