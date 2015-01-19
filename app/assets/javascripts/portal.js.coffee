@@ -31,7 +31,7 @@ class Enalytics.LoadMeasurements
       type: "GET"
       url: @url
       data: {
-        period: 1
+        period: 0.1
       }
       dataType: 'json'
       success: @populate
@@ -49,7 +49,7 @@ class Enalytics.LoadWind
       type: "GET"
       url: @url
       data: {
-        period: 1
+        period: 0.1
       }
       dataType: 'json'
       success: @populate
