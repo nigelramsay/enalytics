@@ -26,6 +26,6 @@ class Api::MeasurementsController < Api::BaseController
   private
 
   def period_in_seconds
-    params[:period] && params[:period].to_i.days || 14.days
+    params[:period] && params[:period].to_f.days || 14.days
   end
 end
